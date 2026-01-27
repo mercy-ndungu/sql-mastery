@@ -23,7 +23,13 @@ FROM Employees
 GROUP BY department
 HAVING COUNT(*) > 3
 ORDER BY employee_count;
-	
+
+-- Exercise 3: Find employees who have been with the company longer than 10 years but have never promoted
+SELECT employee_id, years_at_company, num_promotions, job_role,last_promotion_years_ago
+FROM Employees
+WHERE years_at_company > 10 AND num_promotions = 0
+Order BY years_at_company;
+
 
 	
 
