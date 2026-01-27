@@ -17,9 +17,12 @@ FROM Employees
 WHERE gender = "Female" AND monthly_salary > (SELECT avg(monthly_salary) from Employees)
 ORDER BY monthly_salary DESC;
 
-
-
-    
+-- Exercise Two: List departments with more than 3 employees
+SELECT department, COUNT(*) as employee_count
+FROM Employees
+GROUP BY department
+HAVING COUNT(*) > 3
+ORDER BY employee_count;
 	
 
 	
